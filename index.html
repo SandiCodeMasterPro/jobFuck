@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Senior Engineer – NexaCore Careers</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      color: #1a1a2e;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      border-bottom: 1px solid #eaedf3;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 34px; height: 34px;
+      background: linear-gradient(135deg, #6c47ff, #00c6ff);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 800; font-size: 16px;
+      letter-spacing: -1px;
+    }
+    .logo-text { font-size: 18px; font-weight: 700; color: #1a1a2e; letter-spacing: -0.3px; }
+    .logo-text span { color: #6c47ff; }
+    .nav-links { display: flex; gap: 28px; align-items: center; font-size: 14px; color: #555; }
+    .nav-links a { text-decoration: none; color: #555; transition: color 0.15s; }
+    .nav-links a:hover { color: #6c47ff; }
+    .nav-btn {
+      background: #6c47ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 9px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .nav-btn:hover { background: #5535d4; }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: linear-gradient(120deg, #f4f1ff 0%, #e8f4ff 100%);
+      padding: 52px 40px 40px;
+      border-bottom: 1px solid #eaedf3;
+    }
+    .hero-inner { max-width: 860px; margin: 0 auto; }
+    .breadcrumb { font-size: 13px; color: #888; margin-bottom: 18px; }
+    .breadcrumb a { color: #6c47ff; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .company-row {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+    }
+    .company-logo {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #6c47ff, #00c6ff);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 800; font-size: 20px;
+    }
+    .company-name { font-size: 14px; color: #555; font-weight: 500; }
+
+    .job-title { font-size: 30px; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.5px; }
+
+    .job-meta { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13.5px; color: #666; margin-bottom: 22px; }
+    .job-meta span { display: flex; align-items: center; gap: 5px; }
+
+    .tags { margin-bottom: 24px; }
+    .tag {
+      display: inline-block;
+      background: #ede9ff;
+      color: #6c47ff;
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12.5px;
+      font-weight: 500;
+      margin-right: 8px;
+      margin-bottom: 6px;
+    }
+
+    .apply-btn {
+      background: linear-gradient(135deg, #6c47ff, #00c6ff);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 36px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(108,71,255,0.35);
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .apply-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+
+    .save-btn {
+      background: #fff;
+      color: #6c47ff;
+      border: 1.5px solid #6c47ff;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-left: 12px;
+      transition: background 0.15s;
+    }
+    .save-btn:hover { background: #f4f1ff; }
+
+    /* ── CONTENT ── */
+    .content-wrap {
+      max-width: 860px;
+      margin: 44px auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 44px;
+    }
+
+    .section { margin-bottom: 32px; }
+    .section-title {
+      font-size: 17px; font-weight: 700; margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #ede9ff;
+      color: #1a1a2e;
+    }
+    p { font-size: 14px; line-height: 1.85; color: #444; margin-bottom: 12px; }
+    ul { padding-left: 18px; }
+    ul li { font-size: 14px; line-height: 1.9; color: #444; }
+
+    /* Sidebar */
+    .sidebar-card {
+      border: 1px solid #eaedf3;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 20px;
+      background: #fafbff;
+    }
+    .sidebar-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 14px; color: #1a1a2e; }
+    .sidebar-row {
+      display: flex; justify-content: space-between;
+      font-size: 13px; color: #666;
+      padding: 7px 0;
+      border-bottom: 1px solid #eaedf3;
+    }
+    .sidebar-row:last-child { border-bottom: none; }
+    .sidebar-row strong { color: #1a1a2e; }
+
+    .share-btns { display: flex; gap: 10px; margin-top: 6px; }
+    .share-btns button {
+      flex: 1; padding: 9px;
+      border: 1px solid #eaedf3;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 13px;
+      cursor: pointer;
+      color: #555;
+      transition: border-color 0.15s;
+    }
+    .share-btns button:hover { border-color: #6c47ff; color: #6c47ff; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #f8f8ff;
+      border-top: 1px solid #eaedf3;
+      padding: 22px 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #888;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer a { color: #888; text-decoration: none; margin: 0 10px; }
+    .footer a:hover { color: #6c47ff; }
+    .footer-logo { font-weight: 700; color: #6c47ff; font-size: 14px; }
+
+    /* ── VIDEO OVERLAY ── */
+    #prank-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    #prank-overlay.active { display: flex; }
+    #prank-video { width: 100vw; height: 100vh; object-fit: cover; }
+
+    #countdown {
+      position: fixed; top: 16px; right: 16px;
+      background: rgba(0,0,0,0.55);
+      color: rgba(255,255,255,0.75);
+      border-radius: 50%;
+      width: 42px; height: 42px;
+      display: none; align-items: center; justify-content: center;
+      font-size: 17px; font-family: monospace;
+      z-index: 10000;
+    }
+    #close-btn {
+      position: fixed; top: 16px; right: 16px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.4);
+      color: white; border-radius: 50%;
+      width: 42px; height: 42px; font-size: 18px;
+      cursor: pointer; display: none;
+      align-items: center; justify-content: center;
+      z-index: 10000; transition: background 0.2s;
+    }
+    #close-btn:hover { background: rgba(255,255,255,0.3); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="logo" href="#">
+      <div class="logo-icon">N</div>
+      <div class="logo-text">Nexa<span>Core</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#">Jobs</a>
+      <a href="#">Teams</a>
+      <a href="#">Culture</a>
+      <a href="#">Blog</a>
+      <button class="nav-btn">Sign in</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="breadcrumb">
+        <a href="#">Jobs</a> › <a href="#">Engineering</a> › Senior Full-Stack Engineer
+      </div>
+      <div class="company-row">
+        <div class="company-logo">N</div>
+        <div>
+          <div style="font-weight:700;font-size:15px;">NexaCore</div>
+          <div class="company-name">nexacore.io · San Francisco, CA</div>
+        </div>
+      </div>
+      <div class="job-title">Senior Full-Stack Engineer</div>
+      <div class="job-meta">
+        <span>📍 San Francisco, CA (Hybrid)</span>
+        <span>🏢 NexaCore</span>
+        <span>⏱ Full-time</span>
+        <span>📅 Posted 1 day ago</span>
+      </div>
+      <div class="tags">
+        <span class="tag">Engineering</span>
+        <span class="tag">Full-Stack</span>
+        <span class="tag">Senior</span>
+        <span class="tag">Hybrid</span>
+        <span class="tag">$160K–$220K</span>
+      </div>
+      <div>
+        <button class="apply-btn" onclick="triggerPrank()">Apply Now →</button>
+        <button class="save-btn">♡ Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-wrap">
+    <div class="main">
+
+      <div class="section">
+        <div class="section-title">About NexaCore</div>
+        <p>NexaCore is a next-generation AI infrastructure company helping businesses build, deploy, and scale intelligent products at speed. Founded in 2019 and backed by leading Silicon Valley investors, we power over 3,000 companies across 40 countries.</p>
+        <p>We move fast, care deeply about craft, and believe the best teams are built on trust, curiosity, and a genuine love of solving hard problems.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">About the Role</div>
+        <p>We're looking for a Senior Full-Stack Engineer to join our core product team. You'll work directly with our CTO and lead engineers to build the features that define our platform — from API design to pixel-perfect interfaces.</p>
+        <p>This is a high-impact, high-ownership role. You'll have a real say in architecture decisions and work on problems that matter at scale.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Requirements</div>
+        <ul>
+          <li>5+ years of experience in full-stack software development.</li>
+          <li>Strong proficiency in TypeScript, React, and Node.js.</li>
+          <li>Experience designing and maintaining production REST or GraphQL APIs.</li>
+          <li>Solid understanding of databases (PostgreSQL, Redis) and cloud infrastructure (AWS/GCP).</li>
+          <li>Excellent communication skills and experience working in cross-functional teams.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Nice to Have</div>
+        <ul>
+          <li>Experience with AI/ML integrations or LLM-powered products.</li>
+          <li>Familiarity with infrastructure-as-code tools (Terraform, Pulumi).</li>
+          <li>Previous startup experience or early-stage team contributions.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">What We Offer</div>
+        <ul>
+          <li>Competitive salary: $160,000 – $220,000 + equity.</li>
+          <li>Flexible hybrid schedule — 2 days/week in SF office.</li>
+          <li>Full health, dental & vision coverage for you and your family.</li>
+          <li>$3,000/year learning & development budget.</li>
+          <li>Home office setup allowance + latest MacBook Pro.</li>
+        </ul>
+      </div>
+
+      <button class="apply-btn" onclick="triggerPrank()" style="margin-bottom:48px;">Apply Now →</button>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-card">
+        <h4>Job Details</h4>
+        <div class="sidebar-row"><span>Company</span><strong>NexaCore</strong></div>
+        <div class="sidebar-row"><span>Location</span><strong>San Francisco, CA</strong></div>
+        <div class="sidebar-row"><span>Type</span><strong>Full-time</strong></div>
+        <div class="sidebar-row"><span>Level</span><strong>Senior</strong></div>
+        <div class="sidebar-row"><span>Salary</span><strong>$160K – $220K</strong></div>
+        <div class="sidebar-row"><span>Equity</span><strong>0.05% – 0.2%</strong></div>
+        <div class="sidebar-row"><span>Deadline</span><strong>May 1, 2026</strong></div>
+      </div>
+      <div class="sidebar-card">
+        <h4>Share this job</h4>
+        <div class="share-btns">
+          <button>LinkedIn</button>
+          <button>Copy link</button>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h4>About NexaCore</h4>
+        <p style="font-size:13px;color:#666;line-height:1.7;margin:0;">🌍 3,000+ customers &nbsp;·&nbsp; 40 countries<br>👥 180 employees<br>📅 Founded 2019<br>💰 Series B · $74M raised</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">NexaCore</div>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>© 2026 NexaCore Inc. All rights reserved.</div>
+  </div>
+
+  <!-- PRANK VIDEO OVERLAY -->
+  <div id="prank-overlay">
+    <video id="prank-video" autoplay playsinline>
+      <!--
+        ████████████████████████████████
+         PUT YOUR MP4 FILE NAME BELOW 👇
+        ████████████████████████████████
+      -->
+      <source src="gopgop.mp4" type="video/mp4"/>
+    </video>
+    <div id="countdown">5</div>
+    <button id="close-btn" onclick="closePrank()">✕</button>
+  </div>
+
+  <script>
+    let triggered = false;
+
+    function triggerPrank() {
+      if (triggered) return;
+      triggered = true;
+
+      const overlay   = document.getElementById('prank-overlay');
+      const video     = document.getElementById('prank-video');
+      const countdown = document.getElementById('countdown');
+      const closeBtn  = document.getElementById('close-btn');
+
+      overlay.classList.add('active');
+      countdown.style.display = 'flex';
+
+      if (overlay.requestFullscreen) overlay.requestFullscreen();
+      else if (overlay.webkitRequestFullscreen) overlay.webkitRequestFullscreen();
+
+      video.play().catch(() => {});
+
+      let secs = 5;
+      countdown.textContent = secs;
+      const timer = setInterval(() => {
+        secs--;
+        if (secs <= 0) {
+          clearInterval(timer);
+          countdown.style.display = 'none';
+          closeBtn.style.display = 'flex';
+        } else {
+          countdown.textContent = secs;
+        }
+      }, 1000);
+    }
+
+    function closePrank() {
+      document.getElementById('prank-overlay').classList.remove('active');
+      document.getElementById('prank-video').pause();
+      if (document.exitFullscreen) document.exitFullscreen();
+    }
+  </script>
+
+</body>
+</html>
